@@ -1,0 +1,9 @@
+<h1>Songs Index Page</h1>
+
+<!-- This is nice because it will allow each song to have a link-->
+<!-- And makes the song title, a link to that songs path -->
+<ul>
+  <% @songs.each do |song| %>
+    <%= link_to song.artist.name + " - " +  song.title, song_path(song) %>
+    <% end %>
+</ul>

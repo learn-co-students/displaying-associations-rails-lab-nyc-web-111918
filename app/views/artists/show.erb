@@ -1,0 +1,14 @@
+
+<h1>Show That Artist</h1>
+<!-- Will display the artists name -->
+<h1><%= @artist.name %></h1>
+<!-- We can pluarlize the artists if there is more than one. -->
+  <h3>Song Count: <%= pluralize(@artist.song_count, "Song") %></h3>
+<!-- in an unordered list, iterate through each artists song name -->
+<ul>
+  <!--                       Song is the song instance!-->
+  <% @artist.songs.each do |song| %>
+  <li> <%= link_to song.title, song_path(song) %></li>
+  <% end %>
+</ul>
+<!-- in html link, place the song list to the song_path -->
